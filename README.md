@@ -4,7 +4,7 @@ This repo contains c advanced topics on various topics, its purpose is to provid
 
 All of the explanations of codes will be explained in readme
 
-### using_header_files_effectively
+## using_header_files_effectively
 
 This include functions that can update date, finding date of tomorrow etc.
 
