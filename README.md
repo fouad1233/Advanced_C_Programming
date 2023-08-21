@@ -80,3 +80,7 @@ int main(){
     return 0;
 }
 ```
+
+### External variables
+
+External variables are stored in data segment of memory, they are accessible from any function in the program. They are also called global variables. You can use `extern` keyword to get a global variable and use from other file. Please take a look to external_variables.c and external_variables1.c
