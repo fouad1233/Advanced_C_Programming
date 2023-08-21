@@ -53,7 +53,7 @@ setDate is a macro function that can assign month day and year to the structure 
 
 `extern Date today;`
 
-This block pf code is n example to extern a variable from the main script as an example main.c 
+This block pf code is n example to extern a variable from the main script as an example main.c
 
 ***Secondly main.c***
 
@@ -61,4 +61,22 @@ This block pf code is n example to extern a variable from the main script as an 
 
 `int numberOfDays(Date d)` function return the number of days in the current month.
 
-`Date date_update(Date today)` function using the previous functions return the date of tommorrow.
+`Date date_update(Date today)` function using the previous functions return the date of tomorrow.
+
+
+## storage_classes
+
+### Automatic variables
+
+Automatic variables is the same with local variables are stored in stack memory. These allocates memory automatically when the function is called and frees the memory automatically when the function is returned.It's possible to use auto keyword to declare automatic variables but it's not necessary because all local variables are automatic variables by default.
+
+*Example usage with auto keyword:*
+
+```
+#include <stdio.h>
+int main(){
+    auto int a = 10;
+    printf("a = %d\n", a);
+    return 0;
+}
+```
