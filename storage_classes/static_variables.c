@@ -19,3 +19,7 @@ int main(){
     printf("%d\n", counter());
     return 0;
 }
+static void function(){
+    printf("This is a static function\n");
+}
+static int x = 10;

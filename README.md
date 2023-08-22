@@ -63,10 +63,11 @@ This block pf code is n example to extern a variable from the main script as an 
 
 `Date date_update(Date today)` function using the previous functions return the date of tomorrow.
 
-
 ## storage_classes
 
 ### Automatic variables
+
+*Take a look to automatic_variables.c*
 
 Automatic variables is the same with local variables are stored in stack memory. These allocates memory automatically when the function is called and frees the memory automatically when the function is returned.It's possible to use auto keyword to declare automatic variables but it's not necessary because all local variables are automatic variables by default.
 
@@ -83,10 +84,13 @@ int main(){
 
 ### External variables
 
-External variables are stored in data segment of memory, they are accessible from any function in the program. They are also called global variables. You can use `extern` keyword to get a global variable and use from other file. Please take a look to external_variables.c and external_variables1.c . They are initialized as 0.
+External variables are stored in data segment of memory, they are accessible from any function in the program. They are also called global variables. You can use `extern` keyword to get a global variable and use from other file. ***Please take a look to external_variables.c and external_variables1.c** *. They are initialized as 0.
 
 ### Static variables
 
+***Take a look to static_variables.c***
+
+#### Static Local Variables
 
 Static variables are stored in data segment of memory not stack,they are accessible only from the function they are declared in. They have the property of preserving their value even after they are out of their scope. Hence, static variables preserve their previous value in their previous scope and are not initialized again in the new scope!!
 
@@ -106,6 +110,22 @@ int main(){
 }
 ```
 
-In this code when we call counter function, count variable is initialized to 0 and incremented by 1 . And if you run the code like iIexplain before you can see clearly that count variable is not initialized again when we call counter function again and just increments. 
+In this code when we call counter function, count variable is initialized to 0 and incremented by 1 . And if you run the code like I explain before you can see clearly that count variable is not initialized again when we call counter function again and just increments.
 
-The static variables are initialized to 0 like global variables and they can only be initalized using constant literalse.
+The static variables are initialized to 0 like global variables and they can only be initalized using constant literalse. In this example you cannot acess to count inside the while loop by extern or others method.
+
+#### Static global variables
+
+Take a look to ***External variables.** In that topic we get a variable by `extern` from another scop. If we change it with `static int x= 10;` this variable will be not accessible from the other scope.
+
+#### Static functions
+
+As an example we can define a static function as follow:
+
+```
+static void function(){
+    printf("This is a static function\n");
+}
+```
+
+Like static global variables this function is not accessible from other scope when include the file.
