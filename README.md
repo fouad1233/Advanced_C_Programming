@@ -2,7 +2,9 @@
 
 This repo contains c advanced topics on various topics, its purpose is to provide educational and useful content to people with codes collected from different sources.
 
-All of the explanations of codes will be explained in readme
+All of the explanations of codes will be explained in readme. 
+
+**Please take a look to *README.pdf* for best view.**
 
 ## using_header_files_effectively
 
@@ -129,3 +131,41 @@ static void function(){
 ```
 
 Like static global variables this function is not accessible from other scope when include the file.
+
+### Register Variables
+
+***Take a look to register_variables.c***
+
+Registers hold operands or instructions that CPU would be currently processing.  Memory holds instructions and the data about the currently executing program required by the CPU.
+
+![1692683556594](image/README/1692683556594.png)
+
+Since registers are quicker to access compared to memory, the `register` keyword can be employed in a C program to place variables that are frequently used into registers.
+
+1. Using the & operator with a register variable could lead to an error or warning from the compiler (depending on the specific compiler in use). This is due to the fact that when a variable is declared as a register, it might be stored in a register instead of memory, making the act of accessing its address invalid.
+   As an example:
+
+   ```
+   void test1(){
+       //Creating a register variable and accessing its address
+       //is invalid because register variables are stored in CPU
+       //Compiler will throw an error : error: address of register variable requested
+       register int i = 10;
+       int* a = &i;
+       printf("%d", *a);
+
+
+   }
+   ```
+2. The `register` keyword is applicable to pointer variables as well. It's evident that a register can hold the address of a memory location. The following program should not encounter any issues.
+
+   ```
+   void test2(){
+       int j = 19;
+       register int* a = &j;
+       printf("%d", *a);
+
+   }
+   ```
+3. The usage of the `register` keyword is restricted to block scope (local) and cannot extend to the global scope (outside of the `main` function).
+4. Modern compilers are sophisticated and often perform their own optimizations, including register allocation. They may choose to store variables in registers even without the explicit use of the `register` keyword.
